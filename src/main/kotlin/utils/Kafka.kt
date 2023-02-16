@@ -11,10 +11,6 @@ import org.slf4j.LoggerFactory
 import java.util.*
 import java.util.concurrent.CountDownLatch
 
-
-
-
-
 class Kafka {
 
     private val logger: Logger = LoggerFactory.getLogger(Kafka::class.java)

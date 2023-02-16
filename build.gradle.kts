@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.6.10"
     id("org.jetbrains.compose") version "1.1.0"
+
 }
 
 group = "me.acer"
@@ -55,6 +56,11 @@ compose.desktop {
             implementation("org.apache.kafka:kafka-clients:3.4.0")
             testImplementation("org.apache.kafka:kafka-streams-test-utils:3.4.0")
 
+            //Dagger
+            val daggerVersion = "2.0"
+
+            implementation("com.google.dagger:dagger:$daggerVersion")
+            runtimeOnly("org.jetbrains.kotlin:kotlin-annotation-processing-gradle:1.6.10")
 
         }
     }

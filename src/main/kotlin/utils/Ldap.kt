@@ -1,10 +1,11 @@
 package utils
 
 import services.Ldap
+import javax.inject.Inject
 
-class Ldap(baseUrl: String = "google.com") {
-
-    val client = Retrofit().getRetrofitClient(baseUrl)
+class Ldap @Inject constructor(retrofit: Retrofit)  {
+    val baseUrl: String = PropertyLoader("src/main/resources/configs/rest.properties").getProperty("BASE_URL")
+    val client = retrofit.getRetrofitClient(baseUrl)
     val ldap = client.create(Ldap::class.java)
 
     fun get(){
