@@ -16,7 +16,6 @@ class MainView(val view: View = TelemetricView()):View {
             Column(){
                 Row {
                     TitleView().app()
-                    TitleView().dropdownMenu()
                     SettingView().app()
                 }
                     view.app()
