@@ -1,4 +1,4 @@
-package utils
+package modules.utils
 
 import java.io.File
 import java.io.FileInputStream
@@ -10,13 +10,9 @@ import java.util.*
  * @constructor need path to file for initial object
  */
 
-class PropertyLoader(path: String) {
+class PropertyLoader() {
 
     private var prop: Properties = Properties()
-
-    init {
-        prop.load(FileInputStream(File(path)))
-    }
 
     /**
      * @param path to file
@@ -26,6 +22,7 @@ class PropertyLoader(path: String) {
     }
 
     /**
+     *
     *@param k name. can rewrite property
     *@param v value of property
     */

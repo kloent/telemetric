@@ -19,6 +19,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(compose.desktop.currentOs)
+    implementation(kotlin("reflect"))
 }
 
 tasks.test {

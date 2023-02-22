@@ -1,5 +1,5 @@
 
-import utils.PropertyLoader
+import modules.utils.PropertyLoader
 import org.junit.jupiter.api.Test
 
 
@@ -13,7 +13,7 @@ class PropertyTest {
     }
 
     internal fun setProp(){
-       prop.setPropertyFile("src/main/resources/configs/rest.properties")
+       prop.newPropertyFile("src/main/resources/configs/rest.properties")
     }
 
     internal fun addProp(){

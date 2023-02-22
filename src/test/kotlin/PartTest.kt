@@ -1,9 +1,8 @@
-import interfaces.Item
-import view.data.ItemData
+import androidx.compose.runtime.Composable
 
 class PartTest() {
 
+    @Composable
     fun addItems(){
-
     }
 }

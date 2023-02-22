@@ -11,9 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import interfaces.View
+import modules.interfaces.views.View
 
-class TelemetricView:View {
+class TelemetricView: View {
 
     var text: MutableList<String> = mutableListOf<String>("1st sdasd","2nd asdasdasd"," 3th 1213123")
 

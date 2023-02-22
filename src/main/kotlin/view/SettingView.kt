@@ -1,37 +1,46 @@
 package view
 
-import androidx.compose.material.Button
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import interfaces.View
-import java.awt.Container
-import javax.swing.JFileChooser
-import javax.swing.filechooser.FileNameExtensionFilter
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import controller.Setting
+import modules.interfaces.views.View
+import modules.views.parts.FileChooser
 
+class SettingView(): View {
 
-class SettingView: View {
+    lateinit var fileChooser:FileChooser
+    val controller: Setting = Setting()
 
     @Composable
     override fun app() {
-        val text = "Chose file"
-        Button(onClick = {
-                createDialog()
-        }){
-                Text(text)
+
+        Box(modifier = Modifier
+            .background(Color.Gray)
+            .fillMaxSize()){
+            Column {
+                Row {
+                    Text("Kafka Property")
+                    fileChooser = FileChooser()
+                    controller.actionListener(fileChooser,"Kafka")
+                    fileChooser.app()
+                    Text(controller.model.KafkaFile.value.path, modifier = Modifier.background(Color.Blue).padding(20.dp))
+                }
+                Row {
+                    Text("Rest Property")
+                    fileChooser = FileChooser()
+                    controller.actionListener(fileChooser,"Rest")
+                    fileChooser.app()
+                    Text(controller.model.RestFile.value.path, modifier = Modifier.background(Color.Blue).padding(20.dp))
+                }
+            }
+
         }
 
-    }
-
-    private fun createDialog(){
-        val chooser = JFileChooser()
-        val filter = FileNameExtensionFilter(
-            "Property files", "properties")
-        chooser.fileFilter = filter
-        val returnVal = chooser.showOpenDialog(Container().parent)
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
-            println("You chose to open this file: " +
-                    chooser.selectedFile.path)
-        }
     }
 
 }
