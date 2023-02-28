@@ -2,6 +2,7 @@ package modules.utils
 
 import java.io.File
 import java.io.FileInputStream
+import java.io.FileOutputStream
 import java.util.*
 
 /**
@@ -10,15 +11,19 @@ import java.util.*
  * @constructor need path to file for initial object
  */
 
-class PropertyLoader() {
+class PropertyLoader(val path: String) {
 
     private var prop: Properties = Properties()
-
     /**
      * @param path to file
      */
-    fun setPropertyFile(path: String){
+    fun setPropertyFile(){
         prop.load(FileInputStream(File(path)))
+    }
+
+    fun saveProperty()
+    {
+        prop.store(FileOutputStream(File(path)),"Configs")
     }
 
     /**

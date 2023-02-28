@@ -4,16 +4,17 @@ import org.junit.jupiter.api.Test
 
 
 class PropertyTest {
-    val prop: PropertyLoader = PropertyLoader("src/main/resources/configs/rest.properties")
+    val prop: PropertyLoader = PropertyLoader("src/main/resources/configs")
 
     init {
-        setProp()
         addProp()
         getProp()
+        saveProp()
+        setProp()
     }
 
     internal fun setProp(){
-       prop.newPropertyFile("src/main/resources/configs/rest.properties")
+       prop.setPropertyFile()
     }
 
     internal fun addProp(){
@@ -23,6 +24,9 @@ class PropertyTest {
     internal fun getProp(){
         val base:String = prop.getProperty("test")
         println(base)
+    }
+    fun saveProp(){
+        prop.saveProperty()
     }
 
 }

@@ -12,10 +12,12 @@ class Retrofit() {
         .create()
 
     fun getRetrofitClient(baseUrl: String): Retrofit {
+
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
+
     }
 
 }

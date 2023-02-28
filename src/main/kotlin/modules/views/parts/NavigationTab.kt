@@ -1,6 +1,5 @@
 package modules.views.parts
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.NavigationRail
 import androidx.compose.material.NavigationRailItem
@@ -8,7 +7,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import modules.views.data.ItemsData
 
@@ -20,8 +18,7 @@ class NavigationTab(private val itemsData: ItemsData) {
     fun app(){
     Row {
         NavigationRail(
-            modifier = Modifier.background(
-                Color.Gray)
+            backgroundColor =  Color(193, 211, 254)
         ) {
 
             itemsData.itemsList.forEachIndexed { index, item ->

@@ -1,8 +1,8 @@
 
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
-import modules.views.MainView
 import org.junit.jupiter.api.Test
+import view.LogsView
 
 class ViewsTester {
 
@@ -10,7 +10,7 @@ class ViewsTester {
     fun main() = application {
         Window(onCloseRequest = ::exitApplication) {
            // MainView(TelemetricView(), TitleView()).app()
-            MainView().app()
+            LogsView().app()
         }
     }
 
